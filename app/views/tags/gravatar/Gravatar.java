@@ -40,7 +40,7 @@ public class Gravatar extends FastTags {
                              GroovyTemplate.ExecutableTemplate template, int fromLine) {
 
         if (!args.containsKey("arg") || args.get("arg") == null) {
-            //throw new TemplateExecutionException(template.template, fromLine, "Specify an e-mail address", new TagInternalException("Specify an e-mail address"));
+            throw new TemplateExecutionException(template.template, fromLine, "Specify an e-mail address", new TagInternalException("Specify an e-mail address"));
         }
 
         StringBuffer url = new StringBuffer();
