@@ -4,16 +4,13 @@ MODULE = 'gravatar'
 
 # Commands that are specific to your module
 
-COMMANDS = ['gravatar:hello']
+COMMANDS = []
 
 def execute(**kargs):
     command = kargs.get("command")
     app = kargs.get("app")
     args = kargs.get("args")
     env = kargs.get("env")
-
-    if command == "gravatar:hello":
-        print "~ Hello"
 
 
 # This will be executed before any command (new, run...)
