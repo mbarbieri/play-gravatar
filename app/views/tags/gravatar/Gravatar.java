@@ -38,7 +38,11 @@ public class Gravatar extends FastTags {
           out.print(" width=\""+args.get("size")+"\"");
           out.print(" height=\""+args.get("size")+"\"");
         }
-        out.print(" />");
+        String alt = "";
+        if (args.containsKey("alt")) {
+          alt = args.get("alt").toString();
+        }
+        out.print(" alt=\""+alt+"\" />");
     }
 
     public static void _url (Map<?, ?> args, Closure body, PrintWriter out,
