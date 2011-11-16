@@ -33,7 +33,16 @@ public class Gravatar extends FastTags {
                              GroovyTemplate.ExecutableTemplate template, int fromLine) {
         out.print("<img src=\"");
         _url(args,body,out,template,fromLine);
-        out.print("\"></img>");
+        out.print("\"");
+        if (args.containsKey("size")) {
+          out.print(" width=\""+args.get("size")+"\"");
+          out.print(" height=\""+args.get("size")+"\"");
+        }
+        String alt = "";
+        if (args.containsKey("alt")) {
+          alt = args.get("alt").toString();
+        }
+        out.print(" alt=\""+alt+"\" />");
     }
 
     public static void _url (Map<?, ?> args, Closure body, PrintWriter out,
